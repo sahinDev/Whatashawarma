@@ -7,7 +7,7 @@ import menu_2 from './sandwich.png'
 import menu_3 from './Bowl.png'
 import menu_4 from './pizzza.png'
 import menu_5 from './sides.png'
-import menu_6 from './menu_6.png'
+// import menu_6 from './menu_6.png'
 import menu_7 from './souces.png'
 import menu_8 from './drinks.jpg'
 
