@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 //config variables
 const currency = "usd";
 const deliveryCharge = 5;
-const frontend_URL = 'http://localhost:5173';
+const frontend_URL = 'https://whatashawarma-frontend.onrender.com/';
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
@@ -27,7 +27,7 @@ const placeOrder = async (req, res) => {
                 product_data: {
                     name: item.name
                 },
-                unit_amount: item.price * 100 
+                unit_amount: item.price * 100
             },
             quantity: item.quantity
         }))
