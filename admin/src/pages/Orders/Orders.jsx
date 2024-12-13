@@ -65,7 +65,7 @@ const Order = () => {
               <option value="Order Received">Order Received</option>
               <option value="Processing">Order Verified adn Processing</option>
               <option value="Ready">Ready</option>
-              <option value="Picked up">Picked up</option>
+              <option value="Picked up">Verified and Picked up</option>
 
             </select>
           </div>
