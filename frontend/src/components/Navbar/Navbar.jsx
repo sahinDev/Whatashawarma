@@ -25,6 +25,7 @@ const Navbar = ({ setShowLogin }) => {
         <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "active" : ""}`}>Menu</a>
         {/* <a href='#app-download' onClick={() => setMenu("mob-app")} className={`${menu === "mob-app" ? "active" : ""}`}>mobile app</a> */}
         <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "active" : ""}`}>Contact Us</a>
+        <Link to="/specials" onClick={() => setMenu("specials")} className={`${menu === "specials" ? "active" : ""}`}>Specials</Link>
       </ul>
       <div className="navbar-right">
         {/* <img src={assets.search_icon} alt="" /> */}
