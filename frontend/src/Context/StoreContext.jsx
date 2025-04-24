@@ -12,6 +12,25 @@ const StoreContextProvider = (props) => {
     const currency = "$";
     const deliveryCharge = 5;
 
+    const [specials, setSpecials] = useState([]);
+
+    const fetchSpecials = async () => {
+    const response = await axios.get(url + '/api/specials/list');
+    setSpecials(response.data.data);
+    };
+
+    const addSpecial = async (special) => {
+    await axios.post(url + '/api/specials/add', special);
+    fetchSpecials(); // Refresh specials list
+    };
+
+    const deleteSpecial = async (id) => {
+    await axios.delete(url + `/api/specials/delete/${id}`);
+    fetchSpecials(); // Refresh specials list
+    };
+
+
+
     const addToCart = async (itemId) => {
         if (!cartItems[itemId]) {
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
@@ -81,7 +100,12 @@ const StoreContextProvider = (props) => {
         loadCartData,
         setCartItems,
         currency,
-        deliveryCharge
+        deliveryCharge,
+        
+        specials,
+        fetchSpecials,
+        addSpecial,
+        deleteSpecial,
     };
 
     return (

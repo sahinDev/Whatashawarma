@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState , useContext} from 'react'
+
+
 import './Add.css'
 import { assets, url } from '../../assets/assets';
 import axios from 'axios';
@@ -12,7 +14,7 @@ const Add = () => {
         name: "",
         description: "",
         price: "",
-        category: "Wrap"
+        category: ""
     });
 
     const onSubmitHandler = async (event) => {
@@ -72,15 +74,16 @@ const Add = () => {
                 <div className='add-category-price'>
                     <div className='add-category flex-col'>
                         <p>Product category</p>
-                        <select name='category' onChange={onChangeHandler} >
-                            <option value="Wrap">Wrap</option>
-                            <option value="Wrap">Wrap</option>
-                            <option value="Sandwich/Pita">Sandwich/Pita</option>
+                        <select name='category' value={data.category} onChange={onChangeHandler} >
+                            
+                            {/* <option value="Sandwich/Pita">Sandwich/Pita</option> */}
                             <option value="Bowl">Bowl</option>
+                            <option value="Wrap">Wrap</option>
                             <option value="Pizza">Pizza</option>
                             <option value="Sides">Sides</option>
                             <option value="Beverages">Beverages</option>
-                            <option value="Souces & Dips">Souces &amp; Dips</option>
+                            <option value="Sauces & Dips">Sauces &amp; Dips</option>
+                            <option value="Specials">Specials</option>                            
                             {/* <option value="Wrap">Wrap</option>
                             <option value="Rolls">Rolls</option>
                             <option value="Deserts">Deserts</option>
