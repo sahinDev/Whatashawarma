@@ -3,7 +3,7 @@ import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import menu_1 from './wrap_1.png'
-import menu_2 from './sandwich.png'
+// import menu_2 from './sandwich.png'
 import menu_3 from './Bowl.png'
 import menu_4 from './pizzza.png'
 import menu_5 from './sides.png'
@@ -93,10 +93,10 @@ export const menu_list = [
         menu_name: "Wrap",
         menu_image: menu_1
     },
-    {
-        menu_name: "Sandwich/Pita",
-        menu_image: menu_2
-    },
+    // {
+    //     menu_name: "Sandwich/Pita",
+    //     menu_image: menu_2
+    // },
     {
         menu_name: "Bowl",
         menu_image: menu_3
