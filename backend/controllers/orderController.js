@@ -58,9 +58,8 @@ const placeOrder = async (req, res) => {
     }
 }
 
-// Placing User Order for Frontend using stripe
+// Placing User Order for Frontend for payment on delivery
 const placeOrderCod = async (req, res) => {
-
     try {
         const newOrder = new orderModel({
             userId: req.body.userId,

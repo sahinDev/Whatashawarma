@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const PlaceOrder = () => {
-
+    console.log("PlaceOrder mounted");
     const [payment, setPayment] = useState("cod")
     const [data, setData] = useState({
         firstName: "",
@@ -45,7 +45,7 @@ const PlaceOrder = () => {
         let orderData = {
             address: data,
             items: orderItems,
-            amount: getTotalCartAmount() + deliveryCharge,
+            amount: getTotalCartAmount() /*+ deliveryCharge*/,
         }
         if (payment === "stripe") {
             let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });

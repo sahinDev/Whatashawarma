@@ -78,7 +78,7 @@ const StoreContextProvider = (props) => {
         getTotalCartAmount,
         token,
         setToken,
-        loadCartData,
+        loadCartData,                                      
         setCartItems,
         currency,
         deliveryCharge

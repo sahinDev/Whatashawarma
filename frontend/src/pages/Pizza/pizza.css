@@ -1,0 +1,17 @@
+.pizza-page {
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.canva-embed-wrapper {
+  margin-top: 16px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.pizza-credit {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #666;
+}

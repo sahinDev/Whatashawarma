@@ -22,9 +22,9 @@ const Cart = () => {
               <div className="cart-items-title cart-items-item">
                 <img src={url + "/images/" + item.image} alt="" />
                 <p>{item.name}</p>
-                {/* <p>{currency}{item.price}</p> */}
+                <p>{currency}{item.price}</p>
                 <div>{cartItems[item._id]}</div>
-                {/* <p>{currency}{item.price * cartItems[item._id]}</p> */}
+                <p>{currency}{item.price * cartItems[item._id]}</p>
                 <p className='cart-items-remove-icon' onClick={() => removeFromCart(item._id)}>x</p>
               </div>
               <hr />
@@ -35,25 +35,32 @@ const Cart = () => {
       </div>
       <div className="cart-bottom">
         <div className="cart-total">
-          {/* <h2>Cart Totals</h2>
+          <h2>Cart Totals</h2>
           <div>
             <div className="cart-total-details"><p>Subtotal</p><p>{currency}{getTotalCartAmount()}</p></div>
             <hr />
-            {/* <div className="cart-total-details"><p>Delivery Fee</p><p>{currency}{getTotalCartAmount()===0?0:deliveryCharge}</p></div> */}
-          {/* <hr /> }
-            <div className="cart-total-details"><b>Total</b><b>{currency}{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() /*+ deliveryCharge}</b></div>
-          </div> */}
-          <button onClick={() => navigate('/order')}>Place Order</button>
+            <div className="cart-total-details"><p>Delivery Fee</p><p>{currency}{getTotalCartAmount()===0?0:deliveryCharge}</p></div>
+             <hr /> 
+            <div className="cart-total-details"><b>Total</b><b>{currency}{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() /*+ deliveryCharge */}</b></div>
+          </div> 
+          <button onClick={() => { console.log("Cart: Proceed clicked - before navigate", window.location.pathname);
+              navigate('/order');
+              console.log("Cart: after navigate (location)", window.location.pathname);
+            }}>Proceed to Checkout</button>
         </div>
-        {/* <div className="cart-promocode">
-          <div>
-            <p>If you have a promo code, Enter it here</p>
-            <div className='cart-promocode-input'>
-              <input type="text" placeholder='promo code' />
-              <button>Submit</button>
+        {
+        /* 
+          <div className="cart-promocode">
+            <div>
+              <p>If you have a promo code, Enter it here</p>
+              <div className='cart-promocode-input'>
+                <input type="text" placeholder='promo code' />
+                <button>Submit</button>
+              </div>
             </div>
-          </div>
-        </div> */}
+          </div>console.log("Cart: Proceed clicked"); navigate('/order');
+        */
+        }
       </div>
     </div>
   )

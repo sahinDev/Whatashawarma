@@ -12,7 +12,7 @@ const Footer = () => {
 
         </div>
         <div className="footer-content-center">
-          <h2>COMPANY</h2>
+          <h2>What A Shawarma</h2>
           <ul>
             <li>Home</li>
             <li>About us</li>
