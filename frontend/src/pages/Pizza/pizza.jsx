@@ -38,7 +38,6 @@ const Pizza = () => {
         >
           "Delicious, handcrafted pizza with a style all its own — bold, fresh, and unmistakably unique."
         </a>{' '}
-        by sahin ozturk
       </p>
     </div>
   );
