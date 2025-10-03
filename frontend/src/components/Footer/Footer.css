@@ -70,8 +70,18 @@
         flex-direction: column;
         gap: 35px;
     }
-
+    
     .footer-copyright {
         text-align: center;
     }
+}
+@media (max-width:400px) {
+    .footer {
+        padding: 20px 4vw;
+        padding-top: 60px;
+    }
+    .footer .logo {
+        width: 140px;
+    }
+    
 }

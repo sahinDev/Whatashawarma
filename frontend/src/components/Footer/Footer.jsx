@@ -24,7 +24,7 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+1 647 505 5561</li>
-            <li>whatashawarma@gmail.com</li>
+            <li>whatashawarma@gmail.com</li>  
             <li>664 Bloor Street West, Toronto, ON M6G 1L2</li>
 
           </ul>
