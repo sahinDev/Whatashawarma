@@ -8,6 +8,7 @@ import { StoreContext } from '../../Context/StoreContext'
 const Navbar = ({ setShowLogin }) => {
 
   const [menu, setMenu] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
   const navigate = useNavigate();
 
@@ -17,18 +18,20 @@ const Navbar = ({ setShowLogin }) => {
     navigate('/')
   }
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
   return (
     <div className='navbar'>
       <Link to='/'><img className='logo' src={assets.logo} alt="" /></Link>
       <ul className="navbar-menu">
         <Link to="/" onClick={() => setMenu("home")} className={`${menu === "home" ? "active" : ""}`}>Home</Link>
         <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "active" : ""}`}>Menu</a>
-        {/* <Link to="/pizza" className={`${menu === "pizza" ? "active" : ""}`}>Pizza</Link> New Link added */}
         <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "active" : ""}`}>Contact Us</a>
         <Link to="/specials" onClick={() => setMenu("specials")} className={`${menu === "specials" ? "active" : ""}`}>Specials</Link>
       </ul>
       <div className="navbar-right">
-        {/* <img src={assets.search_icon} alt="" /> */}
         <Link to='/cart' className='navbar-search-icon'>
           <img src={assets.basket_icon} alt="" />
           <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
@@ -43,7 +46,29 @@ const Navbar = ({ setShowLogin }) => {
             </ul>
           </div>
         }
+      </div>
 
+      {/* Hamburger Menu Button */}
+      <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} onClick={closeMenu}>
+        <div className="mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
+          <Link to="/" onClick={() => { closeMenu(); setMenu('home'); }}>Home</Link>
+          <a href='#explore-menu' onClick={() => { closeMenu(); setMenu('menu'); }}>Menu</a>
+          <a href='#footer' onClick={() => { closeMenu(); setMenu('contact'); }}>Contact Us</a>
+          <Link to="/specials" onClick={() => { closeMenu(); setMenu('specials'); }}>Specials</Link>
+          <Link to="/cart" onClick={closeMenu}>Cart</Link>
+          {token ? (
+            <button onClick={() => { logout(); closeMenu(); }}>Logout</button>
+          ) : (
+            <button onClick={() => { setShowLogin(true); closeMenu(); }}>Login</button>
+          )}
+        </div>
       </div>
     </div>
   )

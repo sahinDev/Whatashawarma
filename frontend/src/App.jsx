@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify/Verify'
 import Specials from './pages/Specials/Specials'
 import Pizza from './pages/Pizza/pizza'
+import SajWrap from './pages/SajWrap/SajWrap'
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
           <Route path='/pizza' element={<Pizza />} />
+          <Route path='/sajwrap' element={<SajWrap />} />
           <Route path='/myorders' element={<MyOrders />} />
           <Route path='/verify' element={<Verify />} />
           <Route path='/specials' element={<Specials />} />
