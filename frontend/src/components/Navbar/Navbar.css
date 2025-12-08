@@ -209,24 +209,29 @@
   height: 100%;
   background: #fff;
   box-shadow: -8px 0 24px rgba(0,0,0,0.12);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center; /* center items horizontally for a balanced look */
+    justify-content: center; /* center items vertically (push links down to middle) */
 }
 
 /* Mobile links */
 .mobile-menu-inner a,
 .mobile-menu-inner button {
-  color: #323232;
-  text-decoration: none;
-  font-size: 18px;
-  background: transparent;
-  border: none;
-  text-align: left;
-  padding: 8px 6px;
-  cursor: pointer;
-} 
+    color: #323232;
+    text-decoration: none;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    text-align: center; /* center text inside each link/button */
+    padding: 10px 12px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    max-width: 220px; /* keep links balanced inside the drawer */
+}
 
 /* Hide desktop menu on small screens, show hamburger */
 /* Ensure hamburger/button wrapper is hidden on larger screens and only visible on mobile */
