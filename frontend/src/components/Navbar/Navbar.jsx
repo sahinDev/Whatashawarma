@@ -3,7 +3,7 @@ import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
-
+import HamburgerMenu from './HamburgerMenu'
 
 const Navbar = ({ setShowLogin }) => {
 
@@ -48,14 +48,12 @@ const Navbar = ({ setShowLogin }) => {
         }
       </div>
 
-      {/* Hamburger Menu Button */}
-      <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      {/* Animated hamburger button (mobile) - controls the existing mobile menu */}
+      <div className="hamburger-wrapper">
+        <HamburgerMenu isOpen={menuOpen} onToggle={setMenuOpen} />
+      </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (existing markup) */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} onClick={closeMenu}>
         <div className="mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
           <Link to="/" onClick={() => { closeMenu(); setMenu('home'); }}>Home</Link>

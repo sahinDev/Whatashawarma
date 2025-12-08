@@ -229,15 +229,20 @@
 } 
 
 /* Hide desktop menu on small screens, show hamburger */
+/* Ensure hamburger/button wrapper is hidden on larger screens and only visible on mobile */
+.hamburger,
+.mobile-hamburger-button,
+.hamburger-wrapper {
+    display: none;
+}
+
 @media (max-width: 750px) {
-    .navbar {
-        justify-content: center;
-        align-items: center;
-    }
     .navbar-menu {
         display: none;
     }
-    .hamburger {
+    .hamburger,
+    .mobile-hamburger-button,
+    .hamburger-wrapper {
         display: inline-flex;
         align-items: center;
         justify-content: center;
