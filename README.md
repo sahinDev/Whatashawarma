@@ -86,7 +86,3 @@ npm run dev
 ## Environment & Configuration
 
 - If the backend requires environment variables (DB connection, JWT secret), create a `.env` file in `backend/` and populate per your local setup. Check `backend/config/db.js` for DB connection details used in the project.
-
-## Next Steps
-
-- I can expand the README with deployment steps, environment examples, or API endpoint documentation.
