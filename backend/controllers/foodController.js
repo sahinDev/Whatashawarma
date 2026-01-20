@@ -1,5 +1,6 @@
 import foodModel from "../models/foodModel.js";
 import fs from 'fs'
+import path from 'path'
 
 // all food list
 const listFood = async (req, res) => {
@@ -17,14 +18,15 @@ const listFood = async (req, res) => {
 const addFood = async (req, res) => {
 
     try {
-        let image_filename = `${req.file.filename}`
+        const baseUrl = process.env.PUBLIC_BASE_URL || `${req.protocol}://${req.get("host")}`
+        const imageUrl = `${baseUrl}/images/${req.file.filename}`
 
         const food = new foodModel({
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
             category:req.body.category,
-            image: image_filename,
+            image: imageUrl,
         })
 
         await food.save();
@@ -40,7 +42,14 @@ const removeFood = async (req, res) => {
     try {
 
         const food = await foodModel.findById(req.body.id);
-        fs.unlink(`uploads/${food.image}`, () => { })
+        const uploadDir = process.env.UPLOAD_DIR || 'uploads'
+        let imageName = food?.image || ""
+        if (imageName.startsWith("http")) {
+            imageName = path.basename(new URL(imageName).pathname)
+        }
+        if (imageName) {
+            fs.unlink(path.join(uploadDir, imageName), () => { })
+        }
 
         await foodModel.findByIdAndDelete(req.body.id)
         res.json({ success: true, message: "Food Removed" })

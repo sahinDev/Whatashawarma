@@ -1,12 +1,16 @@
 import express from 'express';
 import { addFood, listFood, removeFood } from '../controllers/foodController.js';
 import multer from 'multer';
+import fs from 'fs';
 const foodRouter = express.Router();
 
 //Image Storage Engine (Saving Image to uploads folder & rename it)
+const uploadDir = process.env.UPLOAD_DIR || 'uploads';
+
+fs.mkdirSync(uploadDir, { recursive: true });
 
 const storage = multer.diskStorage({
-    destination: 'uploads',
+    destination: uploadDir,
     filename: (req, file, cb) => {
         return cb(null,`${Date.now()}${file.originalname}`);
     }

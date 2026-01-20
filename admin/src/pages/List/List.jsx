@@ -35,6 +35,8 @@ const List = () => {
     fetchList();
   }, [])
 
+  const resolveImageUrl = (image) => (image?.startsWith("http") ? image : `${url}/images/${image}`);
+
   return (
     <div className='list add flex-col'>
       <p>All Foods List</p>
@@ -49,7 +51,7 @@ const List = () => {
         {list.map((item, index) => {
           return (
             <div key={index} className='list-table-format'>
-              <img src={`${url}/images/` + item.image} alt="" />
+              <img src={resolveImageUrl(item.image)} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{currency}{item.price}</p>
