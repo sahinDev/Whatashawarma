@@ -88,19 +88,20 @@ const specials = [
 // };
 const Specials = () => {
   return (
-    <div className="specials-container">
-      <h1 className="specials-title">🌟 Today’s Specials</h1>
-      <div className="specials-grid">
-        {specials.map((item) => (
-          <div key={item.id} className="specials-card">
-            <img src={item.image} alt={item.name} />
-            <h2>{item.name}</h2>
-            <p>{item.description}</p>
-            {/* <p className="price">{item.price}</p> */}
-          </div>
-        ))}
-      </div>
-    </div>
+    <h1>Coming Soon</h1>
+    // <div className="specials-container">
+    //   <h1 className="specials-title">🌟 Today’s Specials</h1>
+    //   <div className="specials-grid">
+    //     {specials.map((item) => (
+    //       <div key={item.id} className="specials-card">
+    //         <img src={item.image} alt={item.name} />
+    //         <h2>{item.name}</h2>
+    //         <p>{item.description}</p>
+    //         {/* <p className="price">{item.price}</p> */}
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div>
   );
 };
 
