@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Home from './pages/Home/Home'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Cart from './pages/Cart/Cart'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify/Verify'
 import Specials from './pages/Specials/Specials'
+import Menu from './pages/Menu/Menu'
 // import Pizza from './pages/Pizza/pizza'
 // import SajWrap from './pages/SajWrap/SajWrap'
 // import Bowl from './pages/Bowl'
@@ -21,6 +22,8 @@ import Specials from './pages/Specials/Specials'
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false);
+  const location = useLocation();
+  const isContactRoute = location.pathname === '/contact';
 
   return (
     <>
@@ -30,6 +33,8 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/contact' element={<Footer />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
           {/* <Route path='/pizza' element={<Pizza />} />
@@ -39,7 +44,7 @@ const App = () => {
           <Route path='/specials' element={<Specials />} />
         </Routes>
       </div>
-      <Footer />       
+      {!isContactRoute && <Footer />}
     </>
   )
 }
