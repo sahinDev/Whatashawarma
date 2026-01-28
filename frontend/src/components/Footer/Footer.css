@@ -1,6 +1,10 @@
 .footer {
-    color: #D9D9D9;
+    color: #0e0909;
     background-color: #737373;
+    background-image: url('../../assets/footer-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,12 +51,14 @@
 .footer-content-right ul li {
     margin-bottom: 10px;
     list-style: none;
+    color: orange;
+    
 }
 
 .footer-content-left h2,
 .footer-content-center h2,
 .footer-content-right h2 {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .footer-social-icons img {
