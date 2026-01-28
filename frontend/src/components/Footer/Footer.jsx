@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr />
+      
       <p className="footer-copyright">Copyright 2026 © Whatashawarma.com - All Right Reserved.</p>
     </div>
   )
