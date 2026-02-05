@@ -1,9 +1,10 @@
 .hero {
   position: relative;
+  padding: 12px 0;
 }
 
 .hero-swiper {
-  height: 70vh;
+  height: clamp(320px, 70vh, 720px);
   min-height: 380px;
 }
 
@@ -12,15 +13,19 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  display: flex;
 }
 
 .slide-1 { }
 .slide-2 { 
     background-image: url('/src/assets/pizzaWebsite.gif'); 
-    background-size:contain;   /* fit entire gif */
+    background-size: contain;   /* fit entire gif */
     background-position: center;
     background-repeat: no-repeat;
     background-color: #000;
+    margin: 24px;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -82,8 +87,31 @@
 }
 
 @media(max-width:750px) {
+    .hero-swiper {
+        height: auto;
+        min-height: 360px;
+    }
+
+    .hero-slide {
+        min-height: 360px;
+    }
+
+    .header {
+        height: auto;
+        min-height: 260px;
+        margin: 16px 12px;
+        padding: 18px;
+        background-size: cover;
+        background-position: center;
+    }
+
     .header-contents {
-        max-width: 55%;
+        position: static;
+        max-width: 100%;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 12px;
+        border-radius: 12px;
     }
 
     .header-contents p {
@@ -92,5 +120,17 @@
 
     .header-contents button {
         padding: 2vw 4vw;
+    }
+
+    .slide-2 {
+        background-size: contain;
+        background-position: center;
+        margin: 14px 12px 22px;
+        border-radius: 12px;
+    }
+
+    .hero-swiper .swiper-button-prev,
+    .hero-swiper .swiper-button-next {
+        display: none;
     }
 }
