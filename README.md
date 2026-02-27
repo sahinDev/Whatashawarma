@@ -37,10 +37,6 @@ A small full-stack food ordering web app (React frontend + Node/Express backend)
 - Admin pages for listing/adding/editing food and orders (admin app)
 - Authentication flows (login / logout)
 
-## Developer Notes
-
-- The app imports images from `frontend/src/assets` and exposes them via the `assets` export (`frontend/src/assets/assets.js`). Replace `frontend/src/assets/logo.png` to change the site logo used in both Navbar and Footer.
-- The mobile hamburger/menu uses `framer-motion` for animations. Ensure `framer-motion` is installed in the frontend project if you change menu components.
 
 ## Running Locally (Windows / PowerShell)
 
