@@ -5,7 +5,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import './Header.css'
-import pizzaWebsite from '../../assets/pizzaWebsite.webp'
+// import pizzaWebsite from '../../assets/pizzaWebsite.webp'
 
 const Header = () => {
     return (
@@ -27,7 +27,7 @@ const Header = () => {
                 </div>
             </div>
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
             <div className="hero-slide slide-2">
                 <img
                   className="slide-media"
@@ -37,7 +37,7 @@ const Header = () => {
                   decoding="async"
                 />
             </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </section>
     )
