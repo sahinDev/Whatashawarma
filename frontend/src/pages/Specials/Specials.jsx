@@ -1,13 +1,13 @@
 import React from 'react';
 import './Specials.css'; // Import your CSS file for styling  
 import lunch_special_allday from '../../assets/lunch_special_allday.webp';
-import Lunch_Special_Monday from '../../assets/Lunch_Special_Monday.jpg';
-import Lunch_Special_Tuesday from '../../assets/Lunch_Special_Tuesday.png';
-import Lunch_Special_Wednesday from '../../assets/Lunch_Special_Wednesday.png';
-import lunch_special_friday from '../../assets/lunch_special_friday.png';
-import Lunch_Special_Saturday from '../../assets/Lunch_Special_Saturday.png';
-import Lunch_Special_Sunday from '../../assets/Lunch_Special_Sunday.png';
-import Lunch_Special_Thursday from '../../assets/Lunch_Special_Thursday.png';
+import Lunch_Special_Monday from '../../assets/Lunch_Special_Monday.webp';
+import Lunch_Special_Tuesday from '../../assets/Lunch_Special_Tuesday.webp';
+import Lunch_Special_Wednesday from '../../assets/Lunch_Special_Wednesday.webp';
+import lunch_special_friday from '../../assets/lunch_special_friday.webp';
+import Lunch_Special_Saturday from '../../assets/Lunch_Special_Saturday.webp';
+import Lunch_Special_Sunday from '../../assets/Lunch_Special_Sunday.webp';
+import Lunch_Special_Thursday from '../../assets/Lunch_Special_Thursday.webp';
 
 const specials = [
   {

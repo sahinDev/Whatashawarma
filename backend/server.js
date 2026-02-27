@@ -24,7 +24,10 @@ connectDB()
 app.use("/api/user", userRouter)
 app.use("/api/food", foodRouter)
 const uploadDir = process.env.UPLOAD_DIR || 'uploads'
-app.use("/images",express.static(path.resolve(uploadDir)))
+app.use("/images", express.static(path.resolve(uploadDir), {
+  maxAge: "365d",
+  immutable: true,
+}))
 app.use("/api/cart", cartRouter)
 app.use("/api/order",orderRouter)
 

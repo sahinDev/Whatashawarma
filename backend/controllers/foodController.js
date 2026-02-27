@@ -1,6 +1,7 @@
 import foodModel from "../models/foodModel.js";
-import fs from 'fs'
-import path from 'path'
+import fs from "fs";
+import path from "path";
+import sharp from "sharp";
 
 // all food list
 const listFood = async (req, res) => {
@@ -18,14 +19,23 @@ const listFood = async (req, res) => {
 const addFood = async (req, res) => {
 
     try {
+        const uploadDir = process.env.UPLOAD_DIR || "uploads"
         const baseUrl = process.env.PUBLIC_BASE_URL || `${req.protocol}://${req.get("host")}`
-        const imageUrl = `${baseUrl}/images/${req.file.filename}`
+
+        const parsed = path.parse(req.file.filename)
+        const webpFilename = `${parsed.name}.webp`
+        const webpPath = path.join(uploadDir, webpFilename)
+
+        await sharp(req.file.path).webp({ quality: 80 }).toFile(webpPath)
+        fs.unlink(req.file.path, () => { })
+
+        const imageUrl = `${baseUrl}/images/${webpFilename}`
 
         const food = new foodModel({
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
-            category:req.body.category,
+            category: req.body.category,
             image: imageUrl,
         })
 
