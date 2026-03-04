@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { Link, useNavigate } from 'react-router-dom'
@@ -9,7 +9,7 @@ const Navbar = ({ setShowLogin }) => {
 
   const [menu, setMenu] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
-  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const { getTotalCartItems, token, setToken } = useContext(StoreContext);
   const navigate = useNavigate();
 
   const logout = () => {
@@ -34,7 +34,7 @@ const Navbar = ({ setShowLogin }) => {
       <div className="navbar-right">
         <Link to='/cart' className='navbar-search-icon'>
           <img src={assets.basket_icon} alt="" />
-          <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
+          {getTotalCartItems() > 0 ? <div className="dot"></div> : null}
         </Link>
         {!token ? <button onClick={() => setShowLogin(true)}>sign in</button>
           : <div className='navbar-profile'>
