@@ -1,6 +1,6 @@
 .list-table-format{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
     align-items: center;
     gap: 10px;
     padding: 12px 15px;
@@ -13,6 +13,79 @@
 .list-table-format img{
     width: 50px;
 }
+.list-actions{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.edit-btn{
+    border: 1px solid #111;
+    background: #fff;
+    color: #111;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.delete-btn{
+    color: #d0302f;
+    font-weight: 700;
+}
+
+.edit-modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+    padding: 16px;
+}
+.edit-modal{
+    width: min(520px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+}
+.edit-modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.close-btn{
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+.edit-form input,
+.edit-form textarea,
+.edit-form select{
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+}
+.edit-img-upload img{
+    width: 100px;
+    cursor: pointer;
+}
+.edit-category-price{
+    display: flex;
+    gap: 12px;
+}
+.save-btn{
+    border: none;
+    background: #111;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 @media(max-width:600px){
 
     .list-table-format{
@@ -21,5 +94,11 @@
     }
     .list-table-format.title{
         display: none;
+    }
+    .list-actions{
+        justify-content: flex-start;
+    }
+    .edit-category-price{
+        flex-direction: column;
     }
 }
